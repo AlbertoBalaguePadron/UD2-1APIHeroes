@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
             URL Superhero = NetworkUtils.BuildURLALLHERO();
             urlgethero.setText(githubUrl.toString());
             searchResults.setText(Superhero.toString());
-
             new ResultadoBusqueda().execute(Superhero);
 
         } if (itemId == R.id.clear){
@@ -53,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
             Context context = MainActivity.this;
             Toast.makeText(context, "Se ha pulsado clear ", Toast.LENGTH_LONG).show();
 
+            urlgethero.setText("");
+            searchResults.setText("");
         }
         return true;
     }
